@@ -1,19 +1,5 @@
 {
-  "ads": [
-    {
-      "id": 1,
-      "title": "Test",
-      "description": "Edited",
-      "category": "Translation",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": 1,
-      "applicants": [],
-      "approvedId": 0,
-      "isDeactivated": false,
-      "isDeleted": false
-    }
-  ],
+  "ads": [],
   "users": [],
   "oraganisations": []
 }
