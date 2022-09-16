@@ -1,13 +1,13 @@
 export interface Ad {
-    id?: number,
+    id: number,
     title: string,
-    description?: string,
+    description: string,
     likesCount: number,
     creatorId: number,
     type: string
     category: string,
     applicants: number[]
-    approved?: number,
+    approvedId: number,
     isDeactivated: boolean,
     isDeleted: boolean
 }

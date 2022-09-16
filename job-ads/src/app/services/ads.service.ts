@@ -14,14 +14,15 @@ export class AdsService {
         return this.http.get<Ad[]>(`${environment.apiUrl}/ads`);
     }
 
-    postAd$(ad: Ad): Observable<Ad> {
-        ad.likesCount = 0;
-        ad.applicants = [];
-        ad.isDeleted = false;
-        ad.isDeactivated = false;
-        ad.creatorId  = 1;
-        ad.approved = undefined;
+    getAd(id: number): Observable<Ad>{
+        return this.http.get<Ad>(`${environment.apiUrl}/ads/${id}`)
+    }
 
+    postAd$(ad: Ad): Observable<Ad> {
         return this.http.post<Ad>(`${environment.apiUrl}/ads`, ad);
+    }
+
+    putAd$(ad: Ad): Observable<Ad> {
+        return this.http.put<Ad>(`${environment.apiUrl}/ads/${ad.id}`, ad);
     }
 }
