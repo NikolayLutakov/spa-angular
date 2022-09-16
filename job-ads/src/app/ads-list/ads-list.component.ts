@@ -25,4 +25,11 @@ export class AdsListComponent implements OnInit {
     })
   }
 
+  onDelete(id: number){
+    this.adsService.deleteAd$(id).subscribe({
+      next: ()=> {
+        this.ads = this.ads.filter(x => x.id !== id);
+      }
+    });
+  }
 }

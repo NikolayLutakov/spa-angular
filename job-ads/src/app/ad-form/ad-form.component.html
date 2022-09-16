@@ -1,14 +1,18 @@
 <a routerLink="/ads">Back to list</a>
-<h3>Add new ad</h3>
+<h3>{{formGroup.get('id')?.value ? 'Edit existing ad' : 'Add new ad'}}</h3>
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div>
         <label for="title"></label>
         <input type="text" id="title" formControlName="title">
+
+        <small style="color: red;" *ngIf="formGroup.get('title')?.touched && formGroup.get('title')?.hasError('required')">This field is required!</small>
     </div>
 
     <div>
         <label for="description"></label>
         <input type="text" id="title" formControlName="description">
+
+        <small style="color: red;" *ngIf="formGroup.get('description')?.touched && formGroup.get('description')?.hasError('required')">This field is required!</small>
     </div>
 
     <div>
@@ -28,6 +32,6 @@
     </div>
 
     <div>
-        <button type="submit">Add</button> 
+        <button type="submit" [disabled]="formGroup.invalid">{{formGroup.get('id')?.value ? 'Save' : 'Add'}}</button> 
     </div>
 </form>

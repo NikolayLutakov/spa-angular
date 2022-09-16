@@ -83,8 +83,8 @@ export class AdFormComponent implements OnInit, OnDestroy {
   private buildForm(ad?: Ad): void{
     this.formGroup = this.formBuilder.group({
       id: [ad?.id],
-      title: [ad?.title || ''],
-      description: [ad?.description || ''] ,
+      title: [ad?.title || '', Validators.required],
+      description: [ad?.description || '', Validators.required] ,
       category: [this.categories.find(x => x === ad?.category) || this.categories[0]],
       type: [this.types.find(x => x === ad?.type) || this.types[0]],
       likesCount: [ad?.likesCount || 0],

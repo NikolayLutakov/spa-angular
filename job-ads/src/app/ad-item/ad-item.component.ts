@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Ad } from 'src/models/ad.model';
 
 @Component({
@@ -9,5 +9,9 @@ import { Ad } from 'src/models/ad.model';
 export class AdItemComponent {
   @Input() ad: Ad
 
-  //@Output() editClicked = new EventEmitter<>();
+  @Output() deleteClicked = new EventEmitter<number>();
+
+  onDelete(): void {
+    this.deleteClicked.emit(this.ad.id);
+  }
 }

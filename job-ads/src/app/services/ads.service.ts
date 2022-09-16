@@ -25,4 +25,8 @@ export class AdsService {
     putAd$(ad: Ad): Observable<Ad> {
         return this.http.put<Ad>(`${environment.apiUrl}/ads/${ad.id}`, ad);
     }
+
+    deleteAd$(id: number): Observable<void> {
+        return this.http.delete<void>(`${environment.apiUrl}/ads/${id}`);
+    }
 }
