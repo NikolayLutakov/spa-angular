@@ -3,4 +3,5 @@
     <p>{{ ad.description }}</p>
     <p>{{ad.type}}</p>
     <p>{{ad.category}}</p>
+    <a [routerLink]="['/ads', 'edit', ad.id]">Edit</a> 
 </article>

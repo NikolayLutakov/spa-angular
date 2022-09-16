@@ -24,6 +24,10 @@ const routes: Route[] = [
   {
     path: 'ads/edit',
     component: AdFormComponent
+  },
+  {
+    path: 'ads/edit/:id',
+    component: AdFormComponent
   }
 ]
 
