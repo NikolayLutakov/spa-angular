@@ -1,0 +1,30 @@
+{
+    "ads": [
+        {
+            "id": 1,
+            "title": "Sample 1",
+            "description": "Desc 1",
+            "likesCount": 2,
+            "creatorId": 1,
+            "type" : "full-time",
+            "category": "Admin Support",
+            "applicants": [],
+            "isActive": true,
+            "isDeleted": false
+        },
+        {
+            "id": 2,
+            "title": "Sample 2",
+            "description": "Desc 2",
+            "likesCount": 5,
+            "creatorId": 1,
+            "type" : "full-time",
+            "category": "Customer Service",
+            "applicants": [],
+            "isActive": true,
+            "isDeleted": false
+        }
+    ],
+    "users": [],
+    "oraganisations": []
+}
