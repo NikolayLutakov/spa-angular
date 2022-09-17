@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -28,10 +29,15 @@ export class LoginComponent implements OnInit {
 
     this.authService.login$(body).subscribe({
       next: (user: User) => {
+        if(user === null){
+          console.log('invalid user') //TODO: fix it
+          return
+        }
+
         this.authService.setLoggedUserInLocalStorage(user);
         
         this.router.navigate(['/main'])
-      }
+      },       
     });
   }
 }

@@ -1,0 +1,3 @@
+<p>{{applicant.username}}</p>
+<p>Status: {{applicant.id === approvedId ? 'Approved' : 'Not Approved'}}</p>
+<button *ngIf="!(applicant.id === approvedId)" (click)="onApprove()">Approve</button>

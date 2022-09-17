@@ -94,6 +94,7 @@ export class AdFormComponent implements OnInit, OnDestroy {
       applicants: [ad?.applicants || []],
       approvedId: [ad?.approvedId || ''],
       isDeactivated: [ad?.isDeactivated || false],
+      userLikes: [ad?.userLikes || []]
     });
   }
 }

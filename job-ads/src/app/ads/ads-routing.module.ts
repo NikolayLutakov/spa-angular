@@ -6,6 +6,7 @@ import { AdFormComponent } from './components/ad-form/ad-form.component';
 import { AclOrgGuard } from '../guards/acl-org.guard';
 import { OrgAdsListComponent } from './components/org-ads-list/org-ads-list.component';
 import { OrgAccManageComponent } from './components/org-acc-manage/org-acc-manage.component';
+import { AdApplicantsListComponent } from './components/ad-applicants-list/ad-applicants-list.component';
 
 const routes: Route[] = [
   {
@@ -23,6 +24,12 @@ const routes: Route[] = [
       {
         path: 'ads/org',
         component: OrgAdsListComponent,
+        canActivate: [AclOrgGuard]
+
+      },
+      {
+        path: 'ads/org/applicants/:id',
+        component: AdApplicantsListComponent,
         canActivate: [AclOrgGuard]
 
       },

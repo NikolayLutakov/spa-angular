@@ -1,165 +1,31 @@
 {
   "ads": [
     {
-      "id": 2,
-      "title": "ghjfg hjkgh",
-      "description": "ghjkghjk",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "1",
-      "applicants": [],
-      "approvedId": 0,
-      "isDeactivated": false,
-      "isDeleted": false
-    },
-    {
-      "id": 4,
-      "title": "afsdfas",
-      "description": "asdfasd",
-      "category": "Legal",
-      "type": "remote",
-      "likesCount": 0,
-      "creatorId": "LfW0_LV",
-      "applicants": [],
-      "approvedId": 0,
-      "isDeactivated": false,
-      "isDeleted": false
-    },
-    {
-      "id": 5,
-      "title": "thdfghdf",
-      "description": "ghjfghjfg",
-      "category": "Admin Support",
-      "type": "part-time",
-      "likesCount": 0,
-      "creatorId": "LfW0_LV",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": true,
-      "isDeleted": false
-    },
-    {
-      "id": 6,
+      "id": 1,
       "title": "123",
-      "description": "123",
+      "description": "132",
       "category": "Accounting and Consulting",
       "type": "full-time",
       "likesCount": 0,
-      "creatorId": "cFl9rJ1",
+      "creatorId": 2,
       "applicants": [],
       "approvedId": "",
-      "isDeactivated": false
-    },
-    {
-      "id": 7,
-      "title": "234",
-      "description": "234",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "cFl9rJ1",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": false
-    },
-    {
-      "id": 8,
-      "title": "aaaaaaaa",
-      "description": "aaaaaaaaaa",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "FgnVGld",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": true
-    },
-    {
-      "id": 9,
-      "title": "bbbbbbbb",
-      "description": "bbbbbbb",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "FgnVGld",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": true
-    },
-    {
-      "id": 10,
-      "title": "56756",
-      "description": "56756",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "2DrrQGe",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": true
-    },
-    {
-      "id": 11,
-      "title": "567456",
-      "description": "456745",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "2DrrQGe",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": true
-    },
-    {
-      "id": 12,
-      "title": "asdfasd",
-      "description": "asdfasd",
-      "category": "Accounting and Consulting",
-      "type": "full-time",
-      "likesCount": 0,
-      "creatorId": "aK_FMsR",
-      "applicants": [],
-      "approvedId": "",
-      "isDeactivated": true
+      "isDeactivated": false,
+      "userLikes": []
     }
   ],
   "users": [
     {
-      "id": "2",
       "username": "user",
       "password": "123",
-      "role": "user"
-    },
-    {
-      "username": "test_reg",
-      "password": "123",
       "role": "user",
-      "id": "hlpEAI3"
+      "id": 1
     },
     {
-      "username": "test_org",
+      "username": "admin",
       "password": "123",
       "role": "organisation",
-      "id": "LfW0_LV"
-    },
-    {
-      "username": "user",
-      "password": "123",
-      "role": "user",
-      "id": "cdLlAcI"
-    },
-    {
-      "username": "machine",
-      "password": "123",
-      "role": "user",
-      "id": "mGYkPLx"
-    },
-    {
-      "username": "90-9",
-      "password": "9-09",
-      "role": "user",
-      "id": "2YCQRrV"
+      "id": 2
     }
   ]
 }

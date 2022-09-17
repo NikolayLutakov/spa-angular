@@ -30,11 +30,22 @@ export class AdsListComponent implements OnInit {
     })
   }
 
-  onDelete(id: number){
-    this.adsService.deleteAd$(id).subscribe({
-      next: ()=> {
-        this.ads = this.ads.filter(x => x.id !== id);
-      }
-    });
+  onLike(id: number){
+    // this.adsService.deleteAd$(id).subscribe({
+    //   next: ()=> {
+    //     this.ads = this.ads.filter(x => x.id !== id);
+    //   }
+    // });
+    console.log('like clicked')
+  }
+
+  onApply(id: number){
+    // this.adsService.deleteAd$(id).subscribe({
+    //   next: ()=> {
+    //     this.ads = this.ads.filter(x => x.id !== id);
+    //   }
+    // });
+
+    console.log('apply clicked')
   }
 }

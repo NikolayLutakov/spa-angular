@@ -8,5 +8,6 @@ export interface Ad {
     category: string,
     applicants: string[]
     approvedId: string,
-    isDeactivated: boolean
+    isDeactivated: boolean,
+    userLikes: string[]
 }

@@ -5,8 +5,8 @@
     <p>{{ad.category}}</p>
     <p>Status: {{ad.isDeactivated ? 'Not Active' : 'Active'}}</p>
     <div *ngIf="hasUserPermissions && !ad.isDeactivated">
-        <a [routerLink]="['/main', 'ads', 'edit', ad.id]">Like</a> 
-        <a [routerLink]="['/main', 'ads', 'edit', ad.id]">Apply</a> 
+        <button  *ngIf="!isLiked" (click)="onLike()">Like</button>
+        <button  *ngIf="!isApplied" (click)="onApply()">Apply</button>
     </div>
     
 </article>

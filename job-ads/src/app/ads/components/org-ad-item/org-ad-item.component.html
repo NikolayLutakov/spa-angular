@@ -7,7 +7,6 @@
     <div>
         <a [routerLink]="['/main', 'ads', 'org', 'edit', ad.id]">Edit</a> 
         <button (click)="onDelete()">Delete</button>
-        <a [routerLink]="['/main', 'ads', 'org', 'applicants', ad.id]">See Applicants</a> 
+        <a *ngIf="ad.applicants.length !== 0" [routerLink]="['/main', 'ads', 'org', 'applicants', ad.id]">See Applicants</a> 
     </div>
 </article>
-

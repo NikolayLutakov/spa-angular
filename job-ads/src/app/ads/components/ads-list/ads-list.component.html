@@ -1,6 +1,8 @@
+<h3>All ads</h3>
+
 <div>
     <section>
         <a routerLink="edit" *ngIf="hasUserPermission">View my applications</a> 
-        <app-ad-item *ngFor="let ad of ads" [ad]="ad" (deleteClicked)="onDelete($event)"></app-ad-item>
+        <app-ad-item *ngFor="let ad of ads" [ad]="ad" (likeClicked)="onLike($event)" (applyClicked)="onApply($event)"></app-ad-item>
     </section>
 </div>

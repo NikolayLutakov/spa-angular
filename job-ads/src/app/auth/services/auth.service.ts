@@ -31,6 +31,10 @@ export class AuthService {
     );
   }
 
+  getUser$(id: string): Observable<User>{
+    return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+  }
+
   register$(data: Register): Observable<User> {
     return this.http.post<User>(`${environment.apiUrl}/users`, data);
   }
