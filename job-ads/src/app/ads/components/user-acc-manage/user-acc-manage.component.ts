@@ -8,7 +8,7 @@ import { AdsService } from '../../services/ads.service';
 @Component({
   selector: 'app-user-acc-manage',
   templateUrl: './user-acc-manage.component.html',
-  styleUrls: ['./user-acc-manage.component.css']
+  styleUrls: ['./user-acc-manage.component.scss']
 })
 export class UserAccManageComponent implements OnInit {
 

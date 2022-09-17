@@ -1,12 +1,13 @@
 <article>
     <h3>{{ ad.title}}</h3>
-    <p>{{ ad.description }}</p>
-    <p>{{ad.type}}</p>
-    <p>{{ad.category}}</p>
-    <p>Status: {{ad.isDeactivated ? 'Not Active' : 'Active'}}</p>
+    <textarea rows="10" cols="70">{{ ad.description }}</textarea>
+    <p><span style="font-weight: bold;">Type: </span> {{ad.type}}</p>
+    <p><span style="font-weight: bold;">Category: </span><span>{{ad.category}}</span></p>
+    <p><span style="font-weight: bold;">Status: </span>{{ad.isDeactivated ? 'Not Active' : 'Active'}}</p>
+    <p><span style="font-weight: bold;">Likes: </span>{{ad.userLikes.length}}</p>
     <div>
-        <a [routerLink]="['/main', 'ads', 'org', 'edit', ad.id]">Edit</a> 
-        <button (click)="onDelete()">Delete</button>
-        <a *ngIf="ad.applicants.length !== 0" [routerLink]="['/main', 'ads', 'org', 'applicants', ad.id]">See Applicants</a> 
+        <a class="button-edit" [routerLink]="['/main', 'ads', 'org', 'edit', ad.id]">Edit</a> 
+        <button class="button-delete" (click)="onDelete()">Delete</button>
+        <a class="button-applicants" *ngIf="ad.applicants.length !== 0" [routerLink]="['/main', 'ads', 'org', 'applicants', ad.id]">See Applicants</a> 
     </div>
 </article>

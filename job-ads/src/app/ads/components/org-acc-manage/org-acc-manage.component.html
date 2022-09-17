@@ -1,5 +1,5 @@
 <div>
-    <p>{{user.username}}</p>
+    <h2><span>Username: </span><span style="color: red;">{{user.username}}</span></h2>
 
-    <button (click)="onDelete(user.id)">Delete account</button>
+    <button class="delete-btn" (click)="onDelete(user.id)">Delete account</button>
 </div>
