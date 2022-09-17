@@ -1,0 +1,2 @@
+<h3>Applicants</h3>
+<app-ad-applicant *ngFor="let applicant of applicants" [applicant]="applicant" [approvedId]="approvedId" (approveClicked)="onApprove($event)"></app-ad-applicant>

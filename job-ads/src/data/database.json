@@ -1,0 +1,86 @@
+{
+  "ads": [
+    {
+      "id": 1,
+      "title": "First ad of deleted organisation",
+      "description": "Description",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 2,
+      "title": "Sec ad of deleted org",
+      "description": "Description",
+      "category": "Data Science and Analysis",
+      "type": "part-time",
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 3,
+      "title": "org ad",
+      "description": "werqwerqwe",
+      "category": "Customer Service",
+      "type": "full-time",
+      "creatorId": 1,
+      "applicants": [
+        2
+      ],
+      "approvedId": "",
+      "isDeactivated": false,
+      "userLikes": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "title": "org ad 2",
+      "description": "dfgsdfgs",
+      "category": "Sales and Marketing",
+      "type": "part-time",
+      "creatorId": 1,
+      "applicants": [
+        2
+      ],
+      "approvedId": "",
+      "isDeactivated": false,
+      "userLikes": [
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "title": "new ad",
+      "description": "dfgsdfhgdfgbdfghdf  fghdf\ndfg dfg h\ndfg \ndfg ",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": false,
+      "userLikes": []
+    }
+  ],
+  "users": [
+    {
+      "username": "org",
+      "password": "123",
+      "role": "organisation",
+      "id": 1
+    },
+    {
+      "username": "user",
+      "password": "123",
+      "role": "user",
+      "id": 2
+    }
+  ]
+}

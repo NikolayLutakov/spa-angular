@@ -1,0 +1,7 @@
+<article>
+    <h3>{{ ad.title}}</h3>
+    <textarea rows="10" cols="70" disabled>{{ ad.description }}</textarea>
+    <p><span style="font-weight: bold;">Type: </span> {{ad.type}}</p>
+    <p><span style="font-weight: bold;">Category: </span><span>{{ad.category}}</span></p>
+    <p><span style="font-weight: bold;">Status: </span>{{ad.isDeactivated ? 'Not Active' : 'Active'}}</p>
+</article>

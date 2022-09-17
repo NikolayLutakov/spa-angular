@@ -1,0 +1,37 @@
+<a class="button-back" routerLink="/main/ads/org">Back to list</a>
+<h3>{{formGroup.get('id')?.value ? 'Edit existing ad' : 'Add new ad'}}</h3>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title"></label>
+        <input type="text" id="title" formControlName="title">
+
+        <small style="color: red;" *ngIf="formGroup.get('title')?.touched && formGroup.get('title')?.hasError('required')">This field is required!</small>
+    </div>
+
+    <div>
+        <label for="description"></label>
+        <textarea rows="5" cols="30" type="text" id="title" formControlName="description"></textarea>
+
+        <small style="color: red;" *ngIf="formGroup.get('description')?.touched && formGroup.get('description')?.hasError('required')">This field is required!</small>
+    </div>
+
+    <div>
+        <label for="category"></label>
+        
+        <select type="select" id="category" formControlName="category">
+            <option  *ngFor="let category of categories" [value] = "category">{{category}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="type"></label>
+        
+        <select type="select" id="type" formControlName="type">
+            <option  *ngFor="let type of types" [value] = "type">{{type}}</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit" [disabled]="formGroup.invalid">{{formGroup.get('id')?.value ? 'Save' : 'Add'}}</button> 
+    </div>
+</form>

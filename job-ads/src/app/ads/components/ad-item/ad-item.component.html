@@ -1,0 +1,13 @@
+<article>
+    <h3>{{ ad.title}}</h3>
+    <textarea rows="10" cols="70" disabled>{{ ad.description }}</textarea>
+    <p><span style="font-weight: bold;">Type: </span> {{ad.type}}</p>
+    <p><span style="font-weight: bold;">Category: </span><span>{{ad.category}}</span></p>
+    <p><span style="font-weight: bold;">Status: </span>{{ad.isDeactivated ? 'Not Active' : 'Active'}}</p>
+    <p><span style="font-weight: bold;">Likes: </span>{{ad.userLikes.length}}</p>
+    <div *ngIf="hasUserPermissions && !ad.isDeactivated">
+        <button class="like-btn" *ngIf="!isLiked" (click)="onLike()">Like</button>
+        <button class="apply-btn" *ngIf="!isApplied" (click)="onApply()">Apply</button>
+    </div>
+    
+</article>

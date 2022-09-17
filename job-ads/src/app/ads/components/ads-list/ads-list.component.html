@@ -1,0 +1,8 @@
+<h1>All ads</h1>
+
+<div>
+    <section>
+        <app-ad-item *ngFor="let ad of ads" [ad]="ad" (likeClicked)="onLike($event)" (applyClicked)="onApply($event)"></app-ad-item>
+    </section>
+</div>
+

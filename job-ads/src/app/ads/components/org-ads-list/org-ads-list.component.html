@@ -1,0 +1,5 @@
+<h1>All published ads</h1>
+<div class="add-btn-container">
+    <a routerLink="edit"  class="button-link">Add new</a>
+</div>
+<app-org-ad-item *ngFor="let ad of ads" [ad]="ad" (deleteClicked)="onDelete($event)"></app-org-ad-item>
