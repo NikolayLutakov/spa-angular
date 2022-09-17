@@ -1,5 +1,4 @@
-export interface User {
-    id: string,
+export interface Register{
     username: string,
     password: string,
     role: string

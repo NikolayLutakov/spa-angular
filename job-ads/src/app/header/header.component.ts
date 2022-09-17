@@ -3,6 +3,7 @@ import { AuthService } from '../auth/services/auth.service'
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { User } from '../auth/models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-  hasUser: boolean;
+  hasUser: User;
 
   destroy$ = new Subject<boolean>();
 

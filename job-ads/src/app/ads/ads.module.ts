@@ -7,6 +7,9 @@ import { AdFormComponent } from "./components/ad-form/ad-form.component";
 import { AdItemComponent } from "./components/ad-item/ad-item.component";
 import { AdsListComponent } from "./components/ads-list/ads-list.component";
 import { AdsComponent } from "./components/ads/ads.component";
+import { OrgAdsListComponent } from './components/org-ads-list/org-ads-list.component';
+import { OrgAdItemComponent } from './components/org-ad-item/org-ad-item.component';
+import { OrgAccManageComponent } from "./components/org-acc-manage/org-acc-manage.component";
 
 
 @NgModule ({
@@ -20,7 +23,10 @@ import { AdsComponent } from "./components/ads/ads.component";
         AdsListComponent,
         AdItemComponent,
         AdFormComponent,
-        AdsComponent
+        AdsComponent,
+        OrgAdsListComponent,
+        OrgAdItemComponent,
+        OrgAccManageComponent
     ]
 })
 export class AdsModule {

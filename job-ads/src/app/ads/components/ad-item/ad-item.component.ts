@@ -14,6 +14,7 @@ export class AdItemComponent implements OnInit {
 
   hasOrgPermissions: boolean;
   hasUserPermissions: boolean;
+  curentUserId: string
 
   constructor(private authService: AuthService ) {
     
@@ -21,9 +22,6 @@ export class AdItemComponent implements OnInit {
   ngOnInit(): void {
       this.hasOrgPermissions = this.authService.hasPermissions('organisation');
       this.hasUserPermissions = this.authService.hasPermissions('user');
-  }
-
-  onDelete(): void {
-    this.deleteClicked.emit(this.ad.id);
+      this.curentUserId = this.authService.getLoggedUserFromLocalStorage().id;
   }
 }

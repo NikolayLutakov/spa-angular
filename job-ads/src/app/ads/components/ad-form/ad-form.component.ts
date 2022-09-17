@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { of, Subject, switchMap, take, takeUntil } from 'rxjs';
 import { Ad } from 'src/app/ads/models/ad.model';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { AdsService } from '../../services/ads.service';
 
 @Component({
@@ -36,7 +37,7 @@ export class AdFormComponent implements OnInit, OnDestroy {
     'remote'
   ];
 
-  constructor(private formBuilder: FormBuilder, private adsService: AdsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private adsService: AdsService, private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
   ngOnInit(): void {
     this.buildForm();
 
@@ -76,7 +77,7 @@ export class AdFormComponent implements OnInit, OnDestroy {
 
    request$.subscribe({
       next: () => {
-        this.router.navigate(['/main/ads']);
+        this.router.navigate(['/main/ads/org']);
       }
     });
   }
@@ -89,11 +90,10 @@ export class AdFormComponent implements OnInit, OnDestroy {
       category: [this.categories.find(x => x === ad?.category) || this.categories[0]],
       type: [this.types.find(x => x === ad?.type) || this.types[0]],
       likesCount: [ad?.likesCount || 0],
-      creatorId: [ad?.creatorId || 1],
+      creatorId: [this.authService.getLoggedUserFromLocalStorage().id],
       applicants: [ad?.applicants || []],
-      approvedId: [ad?.approvedId || 0],
+      approvedId: [ad?.approvedId || ''],
       isDeactivated: [ad?.isDeactivated || false],
-      isDeleted: [ad?.isDeleted || false]
     });
   }
 }

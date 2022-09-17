@@ -1,0 +1,2 @@
+<a routerLink="edit">Add new</a>
+<app-org-ad-item *ngFor="let ad of ads" [ad]="ad" (deleteClicked)="onDelete($event)"></app-org-ad-item>

@@ -14,6 +14,14 @@
     </div>
 
     <div>
+        <label for="type">Role</label>
+        
+        <select type="select" id="role" formControlName="role">
+            <option  *ngFor="let role of roles" [value] = "role">{{role}}</option>
+        </select>
+    </div>
+
+    <div>
         <button type="submit">Login</button>
     </div>
 </form>

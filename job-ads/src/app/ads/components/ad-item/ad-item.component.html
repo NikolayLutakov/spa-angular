@@ -3,12 +3,8 @@
     <p>{{ ad.description }}</p>
     <p>{{ad.type}}</p>
     <p>{{ad.category}}</p>
-    <div *ngIf="hasOrgPermissions">
-        <a [routerLink]="['/main', 'ads', 'edit', ad.id]">Edit</a> 
-        <button (click)="onDelete()">Delete</button>
-        <a [routerLink]="['/main', 'ads', 'applicants', ad.id]">See Applicants</a> 
-    </div>
-    <div *ngIf="hasUserPermissions">
+    <p>Status: {{ad.isDeactivated ? 'Not Active' : 'Active'}}</p>
+    <div *ngIf="hasUserPermissions && !ad.isDeactivated">
         <a [routerLink]="['/main', 'ads', 'edit', ad.id]">Like</a> 
         <a [routerLink]="['/main', 'ads', 'edit', ad.id]">Apply</a> 
     </div>

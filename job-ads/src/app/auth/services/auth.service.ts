@@ -5,13 +5,14 @@ import { User } from '../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
+import { Register } from '../models/register.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  hasUser$ = new BehaviorSubject<boolean>(false);
+  hasUser$ = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) {
   }
@@ -30,9 +31,17 @@ export class AuthService {
     );
   }
 
+  register$(data: Register): Observable<User> {
+    return this.http.post<User>(`${environment.apiUrl}/users`, data);
+  }
+
+  deleteAccount$(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.apiUrl}/users/${id}`);
+  }
+
   logout(): void {
     localStorage.removeItem('loggedUser');
-    this.setHasUser(false);
+    this.setHasUser(null);
   }
 
   hasPermissions(role: string): boolean {
@@ -46,24 +55,24 @@ export class AuthService {
 
     localStorage.setItem('loggedUser', JSON.stringify(user));
 
-    this.setHasUser(true);
+    this.setHasUser(user);
   }
 
   getLoggedUserFromLocalStorage(): User {
     const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
 
     if (loggedUser) {
-      this.setHasUser(true);
+      this.setHasUser(loggedUser);
     }
 
     return loggedUser;
   }
 
-  getHasUser$(): Observable<boolean> {
+  getHasUser$(): Observable<User> {
     return this.hasUser$.asObservable();
   }
 
-  setHasUser(value: boolean): void {
+  setHasUser(value: User): void {
     this.hasUser$.next(value);
   }
 }

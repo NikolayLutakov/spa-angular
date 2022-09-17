@@ -1,4 +1,4 @@
-<a routerLink="/main/ads">Back to list</a>
+<a routerLink="/main/ads/org">Back to list</a>
 <h3>{{formGroup.get('id')?.value ? 'Edit existing ad' : 'Add new ad'}}</h3>
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div>
