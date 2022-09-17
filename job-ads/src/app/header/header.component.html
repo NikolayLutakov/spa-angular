@@ -7,10 +7,15 @@
 
       <ng-container *ngIf="hasUser">
         <li class="pointer" routerLink="/main/ads">Ads</li>
-        <li *ngIf="hasUser.role === 'organisation'" class="pointer" routerLink="/main/ads/org">My published ads</li>
-        <li *ngIf="hasUser.role === 'organisation'" class="pointer stretched" routerLink="/main/ads/org/manage">Manage account</li>
-        <li *ngIf="hasUser.role === 'user'" class="pointer stretched" routerLink="/main/ads">My appliances</li>
-      
+      <ng-container  *ngIf="hasUser.role === 'organisation'">
+        <li class="pointer" routerLink="/main/ads/org">My published ads</li>
+        <li class="pointer stretched" routerLink="/main/ads/org/manage">Manage account</li>
+      </ng-container>
+        
+      <ng-container *ngIf="hasUser.role === 'user'">
+        <li class="pointer" routerLink="/main/ads/user/applications">My applications</li>
+        <li class="pointer stretched" routerLink="/main/ads/user/manage">Manage account</li>
+      </ng-container>
         <li
           (click)="onLogout()"
           class="pointer">Logout</li>

@@ -12,6 +12,9 @@ import { OrgAdItemComponent } from './components/org-ad-item/org-ad-item.compone
 import { OrgAccManageComponent } from "./components/org-acc-manage/org-acc-manage.component";
 import { AdApplicantsListComponent } from './components/ad-applicants-list/ad-applicants-list.component';
 import { AdApplicantComponent } from './components/ad-applicant/ad-applicant.component';
+import { UserApplicationsListComponent } from './components/user-applications-list/user-applications-list.component';
+import { UserApplicationItemComponent } from './components/user-application-item/user-application-item.component';
+import { UserAccManageComponent } from './components/user-acc-manage/user-acc-manage.component';
 
 
 @NgModule ({
@@ -30,7 +33,10 @@ import { AdApplicantComponent } from './components/ad-applicant/ad-applicant.com
         OrgAdItemComponent,
         OrgAccManageComponent,
         AdApplicantsListComponent,
-        AdApplicantComponent
+        AdApplicantComponent,
+        UserApplicationsListComponent,
+        UserApplicationItemComponent,
+        UserAccManageComponent
     ]
 })
 export class AdsModule {

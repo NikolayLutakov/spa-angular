@@ -7,6 +7,9 @@ import { AclOrgGuard } from '../guards/acl-org.guard';
 import { OrgAdsListComponent } from './components/org-ads-list/org-ads-list.component';
 import { OrgAccManageComponent } from './components/org-acc-manage/org-acc-manage.component';
 import { AdApplicantsListComponent } from './components/ad-applicants-list/ad-applicants-list.component';
+import { UserApplicationsListComponent } from './components/user-applications-list/user-applications-list.component';
+import { AclUserGuard } from '../guards/acl-user.guard';
+import { UserAccManageComponent } from './components/user-acc-manage/user-acc-manage.component';
 
 const routes: Route[] = [
   {
@@ -20,7 +23,11 @@ const routes: Route[] = [
       {
         path: 'ads/org/manage',
         component: OrgAccManageComponent
-    },
+      },
+      {
+      path: 'ads/user/manage',
+      component: UserAccManageComponent
+      },
       {
         path: 'ads/org',
         component: OrgAdsListComponent,
@@ -31,6 +38,12 @@ const routes: Route[] = [
         path: 'ads/org/applicants/:id',
         component: AdApplicantsListComponent,
         canActivate: [AclOrgGuard]
+
+      },
+      {
+        path: 'ads/user/applications',
+        component: UserApplicationsListComponent,
+        canActivate: [AclUserGuard]
 
       },
       {

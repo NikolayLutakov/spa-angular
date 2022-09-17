@@ -6,4 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ads.component.scss']
 })
 export class AdsComponent {
+  
 }
+
+
