@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { of, Subject, switchMap, take, takeUntil } from 'rxjs';
-import { Ad } from 'src/models/ad.model';
-import { AdsService } from '../services/ads.service';
+import { Ad } from 'src/app/ads/models/ad.model';
+import { AdsService } from '../../services/ads.service';
 
 @Component({
   selector: 'app-ad-form',
   templateUrl: './ad-form.component.html',
-  styleUrls: ['./ad-form.component.css']
+  styleUrls: ['./ad-form.component.scss']
 })
 export class AdFormComponent implements OnInit, OnDestroy {
 
@@ -29,6 +29,7 @@ export class AdFormComponent implements OnInit, OnDestroy {
     'Translation',
     'Web, Mobile, & Software Development',
     'Writing'];
+
   types = [
     'full-time',
     'part-time',
@@ -75,7 +76,7 @@ export class AdFormComponent implements OnInit, OnDestroy {
 
    request$.subscribe({
       next: () => {
-        this.router.navigate(['/ads']);
+        this.router.navigate(['/main/ads']);
       }
     });
   }
@@ -83,8 +84,8 @@ export class AdFormComponent implements OnInit, OnDestroy {
   private buildForm(ad?: Ad): void{
     this.formGroup = this.formBuilder.group({
       id: [ad?.id],
-      title: [ad?.title || '', Validators.required],
-      description: [ad?.description || '', Validators.required] ,
+      title: [ad?.title || '', [Validators.required]],
+      description: [ad?.description || '', [Validators.required]] ,
       category: [this.categories.find(x => x === ad?.category) || this.categories[0]],
       type: [this.types.find(x => x === ad?.type) || this.types[0]],
       likesCount: [ad?.likesCount || 0],

@@ -1,5 +1,32 @@
 {
-  "ads": [],
-  "users": [],
+  "ads": [
+    {
+      "id": 2,
+      "title": "ghjfg hjkgh",
+      "description": "ghjkghjk",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "likesCount": 0,
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": 0,
+      "isDeactivated": false,
+      "isDeleted": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "org",
+      "password": "123",
+      "role": "organisation"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "user"
+    }
+  ],
   "oraganisations": []
 }

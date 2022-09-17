@@ -1,6 +1,0 @@
-<div>
-    <section>
-        <a routerLink="/ads/edit">Add new</a> 
-        <app-ad-item *ngFor="let ad of ads" [ad]="ad" (deleteClicked)="onDelete($event)"></app-ad-item>
-    </section>
-</div>
