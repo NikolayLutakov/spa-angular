@@ -2,24 +2,76 @@
   "ads": [
     {
       "id": 1,
-      "title": "123",
-      "description": "132",
+      "title": "first",
+      "description": "desc",
       "category": "Accounting and Consulting",
       "type": "full-time",
-      "likesCount": 0,
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 2,
+      "title": "sec",
+      "description": "123",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 3,
+      "title": "231234",
+      "description": "2342",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "creatorId": 1,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 4,
+      "title": "123",
+      "description": "tyr5t",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
       "creatorId": 2,
       "applicants": [],
       "approvedId": "",
-      "isDeactivated": false,
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 5,
+      "title": "rtyer",
+      "description": "rtyer",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "creatorId": 2,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
+      "userLikes": []
+    },
+    {
+      "id": 6,
+      "title": "rtyert",
+      "description": "ertyre",
+      "category": "Accounting and Consulting",
+      "type": "full-time",
+      "creatorId": 2,
+      "applicants": [],
+      "approvedId": "",
+      "isDeactivated": true,
       "userLikes": []
     }
   ],
-  "users": [
-    {
-      "username": "admin",
-      "password": "123",
-      "role": "organisation",
-      "id": 2
-    }
-  ]
+  "users": []
 }

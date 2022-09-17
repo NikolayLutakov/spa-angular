@@ -28,17 +28,25 @@ export class UserAccManageComponent implements OnInit {
         this.ads = [...response.filter(x => x.applicants.includes(this.user.id))];
 
         for(let ad of this.ads){
-          let index = ad.applicants.findIndex(x => this.user.id);
-          ad.applicants.splice(index, 1);
-          this.adsService.putAd$(ad).subscribe();
+          let likeIndex = ad.userLikes.indexOf(this.user.id);
+          let aplicantIndex = ad.applicants.indexOf(this.user.id);
+          if(likeIndex !== -1){
+            ad.userLikes.splice(likeIndex, 1);
+          }
 
-          this.authService.deleteAccount$(id).subscribe();
-
-          this.authService.logout();
-          this.router.navigate(['/auth', 'login']);
+          if(aplicantIndex !== -1){
+            ad.applicants.splice(aplicantIndex, 1);
+          }
+          this.adsService.putAd$(ad).subscribe();  
         }
       }
+      
     });
+
+    this.authService.deleteAccount$(id).subscribe();
+    this.authService.logout();
+    this.router.navigate(['/auth', 'login']);
   }
+  
 
 }

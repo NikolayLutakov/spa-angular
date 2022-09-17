@@ -14,14 +14,14 @@ import { AdsService } from '../../services/ads.service';
 })
 export class AdApplicantsListComponent implements OnInit {
 
-  applicants: User[] = [];
+  applicants: User[];
   approvedId: string;
   currAd: Ad;
   destroy$ = new Subject<boolean>();
 
   constructor(private adsService: AdsService, private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
   ngOnInit(): void {
-   
+    this.applicants = [];
     this.route.params.pipe(
       switchMap((params: Params) => {
         const id = params['id'];
@@ -59,7 +59,7 @@ export class AdApplicantsListComponent implements OnInit {
 
     this.adsService.putAd$(this.currAd).subscribe({
       next: ()=> {
-        this.router.navigate(['/main','ads','org',])
+        this.ngOnInit()
       }
     });
   }

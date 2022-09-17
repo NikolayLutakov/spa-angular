@@ -89,7 +89,6 @@ export class AdFormComponent implements OnInit, OnDestroy {
       description: [ad?.description || '', [Validators.required]] ,
       category: [this.categories.find(x => x === ad?.category) || this.categories[0]],
       type: [this.types.find(x => x === ad?.type) || this.types[0]],
-      likesCount: [ad?.likesCount || 0],
       creatorId: [this.authService.getLoggedUserFromLocalStorage().id],
       applicants: [ad?.applicants || []],
       approvedId: [ad?.approvedId || ''],

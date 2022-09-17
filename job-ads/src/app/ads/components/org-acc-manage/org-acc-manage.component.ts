@@ -31,12 +31,13 @@ export class OrgAccManageComponent implements OnInit {
           ad.isDeactivated = true;
           this.adsService.putAd$(ad).subscribe();
 
-          this.authService.deleteAccount$(id).subscribe();
-
-          this.authService.logout();
-          this.router.navigate(['/auth', 'login']);
+          
         }
       }
     });
+
+    this.authService.deleteAccount$(id).subscribe();
+    this.authService.logout();
+    this.router.navigate(['/auth', 'login']);
   }
 }

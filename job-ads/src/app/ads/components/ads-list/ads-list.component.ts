@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ad } from 'src/app/ads/models/ad.model';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { AdsService } from '../../services/ads.service';
@@ -13,7 +14,7 @@ export class AdsListComponent implements OnInit {
   ads: Ad[];
   hasOrgPermission: boolean;
   hasUserPermission: boolean;
-  constructor(private authService: AuthService, private adsService: AdsService) {}
+  constructor(private authService: AuthService, private adsService: AdsService, private router: Router) {}
   
   ngOnInit(): void {
     this.hasOrgPermission = this.authService.hasPermissions('organisation');
@@ -30,22 +31,26 @@ export class AdsListComponent implements OnInit {
     })
   }
 
-  onLike(id: number){
-    // this.adsService.deleteAd$(id).subscribe({
-    //   next: ()=> {
-    //     this.ads = this.ads.filter(x => x.id !== id);
-    //   }
-    // });
-    console.log('like clicked')
+  onLike(input: {adId: number, userId: string}){
+    
+    let likedAd = this.ads.find(x => x.id == input.adId);
+    likedAd.userLikes.push(input.userId);
+
+    this.adsService.putAd$(likedAd).subscribe({
+      next: ()=> {
+        this.ngOnInit();
+      }
+    });
   }
 
-  onApply(id: number){
-    // this.adsService.deleteAd$(id).subscribe({
-    //   next: ()=> {
-    //     this.ads = this.ads.filter(x => x.id !== id);
-    //   }
-    // });
+  onApply(input: {adId: number, userId: string}){
+    let addToApply = this.ads.find(x => x.id == input.adId);
+    addToApply.applicants.push(input.userId);
 
-    console.log('apply clicked')
+    this.adsService.putAd$(addToApply).subscribe({
+      next: ()=> {
+        this.ngOnInit();
+      }
+    });
   }
 }

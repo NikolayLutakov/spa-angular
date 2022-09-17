@@ -10,8 +10,8 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class AdItemComponent implements OnInit {
   @Input() ad: Ad
 
-  @Output() likeClicked = new EventEmitter<number>();
-  @Output() applyClicked = new EventEmitter<number>();
+  @Output() likeClicked = new EventEmitter<{adId: number, userId: string}>();
+  @Output() applyClicked = new EventEmitter<{adId: number, userId: string}>();
   
   hasOrgPermissions: boolean;
   hasUserPermissions: boolean;
@@ -31,10 +31,10 @@ export class AdItemComponent implements OnInit {
   }
 
   onLike(): void {
-    this.likeClicked.emit(this.ad.id);
+    this.likeClicked.emit({adId: this.ad.id, userId: this.curentUserId});
   }
 
   onApply(): void {
-    this.applyClicked.emit(this.ad.id);
+    this.applyClicked.emit({adId: this.ad.id, userId: this.curentUserId});
   }
 }
